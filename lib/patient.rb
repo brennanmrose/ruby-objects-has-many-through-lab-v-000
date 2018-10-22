@@ -24,15 +24,13 @@ class Patient
     Appointment.new(self, doctor, date)
   end 
   
-  def doctors 
-    Appointment.all.collect { |appt| if appt.patient == self appt.doctor }
-    # end
-    # Appointment.all.collect do |appt| 
-    #   if appt.patient == self
-    #     appt.doctor 
-    #   end
-    # end
-  # end 
+  def doctors
+    Appointment.all.collect do |appt| 
+      if appt.patient == self
+        appt.doctor 
+      end
+    end
+  end 
 end 
 
 
